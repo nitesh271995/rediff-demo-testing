@@ -1,0 +1,29 @@
+1.create java project with required jars(selenium,apache poi,commons.io)
+2.create project structure(utilities,POM,testcases,resources,screenshots,appmodules)
+3.populate your drivers in respective folder
+create baseclass in utilities package with webdriver and webelement by using constructor
+create driversetup  in utilities package by extending base class
+			for your multi browser implementation(declare your broswer driver with sync)
+			----->sync(app & script)
+			--->unconditional--->Thread.sleep(3000)
+			--->conditional
+						--->implicit wait-->driver.manage().timeout().timespan
+						--->Explicit wait
+											WebDriver wait=new WebdriverWait(driver,Timespan.fromseconds(20));
+											wait.until(Expected conditions.visiblityof allelements())
+											
+Datasources(object repository)--->Excel,databases,property file,etc...
+property file===>Properties p=new Properties()===>p.getProperty("baseurl")
+create POM===>declare locators seperately===>by usnig those decalrations create methods for each webelements
+create excelutils in utilities package
+========================>Excel Handling<=================================
+=========================>Apache POI<===================================
+Read and write values----->.xls,.xlsx
+Interfaces inside poi-->workbook,sheet,row,cell
+classes inside poi-->XSSFWorkbook,XSSFSheet,XSSFRow,XSSFCell,Sheet,Row,Cell
+excel read and write code need to be executed
+call the methods from pom to execute the functionality
+finally call driversetup ,executionand kill method to complete everything
+
+
+
